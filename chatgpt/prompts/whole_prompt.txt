@@ -1,0 +1,116 @@
+You will receive a piece of morality-related text. Your job is to determine whether this morality-related text involves the five dimensions of moral foundations: Care/Harm, Fairness/Cheating, Loyalty/Betrayal, Authority/Subversion, Sanctity/Degradation 
+
+Here are the definitions for each of the five moral dimensions
+<definitions>
+    Care/Harm: The Care/Harm foundation is rooted in the innate human capacity for
+                empathy and compassion towards others. This moral foundation emphasizes the importance of
+                caring for others, particularly those who are vulnerable or in need, and avoiding actions that cause
+                harm. An example is “One of the worst things a person could do is hurt a defenseless animal.”
+    
+    Fairness/Cheating: The Fairness/Cheating foundation is centered on the human inclination
+                        towards equitable treatment. This moral foundation underscores the importance of justice, equity,
+                        and integrity, advocating for actions that promote fairness and condemn those that facilitate cheating
+                        or create unfair advantages. An example is “Justice is the most important requirement for a society.”
+    
+    Loyalty/Betrayal: The Loyalty/Betrayal foundation centers on the human tendency
+                        towards forming strong group affiliations and maintaining solidarity with those groups. This moral
+                        foundation emphasizes the importance of loyalty, allegiance, and fidelity in social groups. An
+                        example is “It is more important to be a team player than to express oneself.”
+
+    Authority/Subversion: The Authority/Subversion foundation revolves around the relationships between individuals and institutions that symbolize leadership and social hierarchy. This
+                            moral foundation values respect for authority, emphasizing the importance of the maintenance of
+                            order. An example is “Respect for authority is something all children need to learn.”
+
+    Sanctity/Degradation: The Sanctity/Degradation foundation is based on the concept
+                            of protecting the sacredness of life and the environment, which invokes a deep-seated disgust or
+                            contempt when these are degraded. This moral foundation emphasizes purity and the avoidance of
+                            pollution as a way to preserve the sanctity of individuals, objects, and places deemed sacred. An
+                            example is “People should not do things that are disgusting, even if no one is harmed.”
+</definitions>
+
+<insturctions>
+    Iterate through five moral dimensions in [Care/Harm, Fairness/Cheating, Loyalty/Betrayal, Authority/Subversion, Sanctity/Degradation]
+    For each dimension, determine whether the text involves the given dimension according to the definition above, output 1 if it does, 0 if it doesn' with your reasonings of this judgement. 
+</instructions>
+
+Here are some examples: 
+<example 1>
+    text: This Sandra Bland situation man no disrespect rest her soul , but people die everyday in a unjustified matter #AllLivesMatter
+
+    output:
+    {{
+        "Care/Harm": (1, The text mentions caring of people's death),
+        "Fairness/Cheating": (1, The text mentions whether people die in a justified manner, which is linked to fairness),
+        "Loyalty/Betrayal": (0, The text doesn't mention anything related to Loyalty/Betrayal),
+        "Authority/Subversion": (0, The text doesn't mention anything related to Authority/Subversion),
+        "Sanctity/Degradation": (0, The text doesn't mention anything related to Sanctity/Degradation)
+    }}
+</example 1>
+
+<example 2>
+    text: It really breaks my heart to hear these stories of NY ers looting stealing amp scamming people affected by Sandy Fucking disgraceful
+
+    output:
+    {{
+        "Care/Harm": (1, The text mentions feeling heart-broken when hearing people are scammed, which is linked to Care),
+        "Fairness/Cheating": (1, The text mentiones looting stealing amp scamming people, which is a form of cheating and not fair, and is linked to fairness),
+        "Loyalty/Betrayal": (0, The text doesn't mention anything related to Loyalty/Betrayal),
+        "Authority/Subversion": (0, The text doesn't mention anything related to Authority/Subversion),
+        "Sanctity/Degradation": (1, The text mentiones looting stealing amp scamming people is disgraceful, which is linked to Degradation)
+    }}
+
+</example 2>
+
+<example 3>
+    text: That particular part of the debate is especially funny. Macron was explaining he did not think FN voters were evil and that from where he comes from he knew many, and she was like ""ooooh the evil FN invaders they're everywhere...!"" Self-awareness: zero.
+
+    output:
+    {{
+        "Care/Harm": (0, The text doesn't mention anything related to Care/Harm),
+        "Fairness/Cheating": (0, The text doesn't mention anything related to Fairness/Cheating),
+        "Loyalty/Betrayal": (0, The text doesn't mention anything related to Loyalty/Betrayal),
+        "Authority/Subversion": (0, The text doesn't mention anything related to Authority/Subversion),
+        "Sanctity/Degradation": (1, The text mentiones whether FN voters were evil, and evil is linked to Degradation)
+    }}
+
+</example 3>
+
+<example 4>
+    text: Someone dying of a disease doesn't change that we've massively over reacted, and it's not as lethal as people are afraid of.
+
+    output:
+    {{
+        "Care/Harm": (0, The text doesn't mention anything related to Care/Harm),
+        "Fairness/Cheating": (0, The text doesn't mention anything related to Fairness/Cheating),
+        "Loyalty/Betrayal": (0, The text doesn't mention anything related to Loyalty/Betrayal),
+        "Authority/Subversion": (0, The text doesn't mention anything related to Authority/Subversion),
+        "Sanctity/Degradation": (0, The text doesn't mention anything related to Sanctity/Degradation)
+    }}
+</example 4>
+
+<example 5>
+    text: Someone dying of a disease doesn't change that we've massively over reacted, and it's not as lethal as people are afraid of.
+
+    output:
+    {{
+        "Care/Harm": (0, The text doesn't mention anything related to Care/Harm),
+        "Fairness/Cheating": (0, The text doesn't mention anything related to Fairness/Cheating),
+        "Loyalty/Betrayal": (0, The text doesn't mention anything related to Loyalty/Betrayal),
+        "Authority/Subversion": (0, The text doesn't mention anything related to Authority/Subversion),
+        "Sanctity/Degradation": (0, The text doesn't mention anything related to Sanctity/Degradation)
+    }}
+</example 5>
+
+This the moral text that you need to label:
+<text>
+    {text}
+</text>
+
+Provide the answer by filling in 1 or 0 and the reasonings according to the instructions in the JSON format below:
+{{
+    "Care/Harm": (0 or 1, your reasoning for the judgement),
+    "Fairness/Cheating": (0 or 1, your reasoning for the judgement),
+    "Loyalty/Betrayal": (0 or 1, your reasoning for the judgement),
+    "Authority/Subversion": (0 or 1, your reasoning for the judgement),
+    "Sanctity/Degradation": (0 or 1, your reasoning for the judgement)
+}}
