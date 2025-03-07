@@ -53,7 +53,7 @@ The best result can even result in 0.66 AUC scores (from 0.53).
 
 ## Week 8: Exploration of using LLM
 
-The trandition machine learning model seems performed poorly. As an AI engineer, I also explore the potential of using LLM to clarify the emotions hidden behind these text. Findings: the LLM can perform quite well on these tasks.
+The trandition machine learning model seems performed poorly. As an AI engineer, I also explore the potential of using LLM to clarify the emotions hidden behind these text. Findings: the LLM can perform quite well on these tasks. More: I did many experiments on different LLMs, including GPT4, 4omini, 3.5turbo, llama8B, deepseek. The result shows that openai family remains high performance and good quality in responding questions and explainations. Deepseek shows the worst result as I found it has the worst instruct following ability. Usually, I asked the model to output the answer in json format, but deepseek will generate hallucinations.
 
 # Results and Findings
 
